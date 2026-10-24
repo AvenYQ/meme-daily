@@ -1,0 +1,102 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>今日新梗 · 2026-10-23</title>
+<link rel="preconnect" href="https://fonts.googleapis.cn">
+<link rel="stylesheet" href="https://fonts.googleapis.cn/css2?family=ZCOOL+KuaiLe&display=swap">
+<style>
+:root{--sky:#bfe0ff;--dot:#9ccbf7;--ink:#141414;--paper:#fff;--c1:#ff6b4a;--c2:#ffd23f;--c3:#3ddc97;--c4:#b79cff;--c5:#ff8fc7;--muted:#4a4f5c;--bubble:#95ec69;
+--display:"ZCOOL KuaiLe","PingFang SC","Hiragino Sans GB",sans-serif;--body:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color-scheme:light}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sky);background-image:radial-gradient(var(--dot) 1.4px,transparent 1.6px);background-size:14px 14px;color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.wrap{max-width:680px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:22px}
+.danmaku{position:relative;height:84px;overflow:hidden;border:3px solid var(--ink);border-radius:10px;background:var(--ink)}
+.lane{position:absolute;left:0;white-space:nowrap;font-weight:700;font-size:14px;animation:fly linear infinite}
+.lane:nth-child(1){top:8px;color:var(--c2);animation-duration:17s}.lane:nth-child(2){top:32px;color:#fff;animation-duration:22s;animation-delay:-6s}.lane:nth-child(3){top:56px;color:var(--c3);animation-duration:19s;animation-delay:-11s}
+.lane span{margin-right:56px}@keyframes fly{from{transform:translateX(100vw)}to{transform:translateX(-100%)}}
+.head{display:flex;flex-direction:column;gap:6px}
+.issue{align-self:flex-start;font-size:12px;letter-spacing:.12em;font-weight:700;background:var(--ink);color:var(--c2);padding:3px 10px;border-radius:999px;transform:rotate(-2deg)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(52px,15vw,92px);line-height:.95;margin:0}
+h1 .hl{background:linear-gradient(transparent 58%,var(--c2) 58% 92%,transparent 92%);padding:0 4px}
+h1 .tilt{display:inline-block;transform:rotate(6deg);color:var(--c1);-webkit-text-stroke:2px var(--ink)}
+.sub{margin:0;font-size:13px;color:var(--muted)}
+.chat{display:flex;gap:10px;align-items:flex-start}.ava{flex:none;width:42px;height:42px;border:3px solid var(--ink);border-radius:10px;background:var(--c4);display:grid;place-items:center;font-family:var(--display);font-size:20px}
+.msg{min-width:0;display:flex;flex-direction:column;gap:2px}.who{font-size:12px;color:var(--muted)}
+.bub{background:var(--paper);border:3px solid var(--ink);border-radius:4px 14px 14px 14px;padding:10px 14px;box-shadow:4px 4px 0 var(--ink)}
+.cards{display:flex;flex-direction:column;gap:22px;list-style:none;margin:0;padding:0}
+.card{--c:var(--c1);position:relative;background:var(--paper);border:3px solid var(--ink);border-radius:16px;box-shadow:6px 6px 0 var(--ink);padding:18px 18px 16px;cursor:pointer;transition:transform .18s cubic-bezier(.3,1.6,.5,1),box-shadow .18s;-webkit-tap-highlight-color:transparent}
+.card:nth-child(odd){transform:rotate(-.8deg)}.card:nth-child(even){transform:rotate(.9deg)}
+.card:hover,.card:focus-visible{transform:rotate(0) translate(-2px,-2px);box-shadow:9px 9px 0 var(--ink);outline:none}
+.card.c2{--c:var(--c2)}.card.c3{--c:var(--c3)}.card.c4{--c:var(--c4)}.card.c5{--c:var(--c5)}
+.stamp{position:absolute;top:-14px;right:14px;background:var(--c);border:3px solid var(--ink);border-radius:8px;padding:1px 10px;font-size:12px;font-weight:900;transform:rotate(4deg)}
+.name{font-family:var(--display);font-weight:400;font-size:clamp(28px,8vw,38px);line-height:1.1;margin:4px 0 8px}
+.name mark{background:linear-gradient(transparent 55%,var(--c) 55%);color:inherit;padding:0 2px}
+.mean{margin:0;font-weight:600}.src{margin:4px 0 0;font-size:13px;color:var(--muted)}
+.say{margin-top:12px;display:flex;justify-content:flex-end}.say p{margin:0;max-width:88%;background:var(--bubble);border:2px solid var(--ink);border-radius:14px 4px 14px 14px;padding:7px 12px;font-size:14px}
+.more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}.more>div{overflow:hidden}.card[aria-expanded="true"] .more{grid-template-rows:1fr}
+.origin{margin-top:14px;border-top:2px dashed var(--ink);padding-top:10px;display:flex;flex-direction:column;gap:8px}
+.origin b{font-size:11px;letter-spacing:.14em;background:var(--ink);color:var(--paper);padding:1px 6px;border-radius:4px;align-self:flex-start}
+.origin p{margin:0;font-size:14px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{font-size:12px;border:2px solid var(--ink);border-radius:999px;padding:0 8px}
+.wiki{align-self:flex-start;font-size:13px;font-weight:700;color:var(--ink)}
+.hint{margin-top:10px;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.hint::before{content:"";width:9px;height:9px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg) translate(-2px,-2px);transition:transform .2s}
+.card[aria-expanded="true"] .hint::before{transform:rotate(-135deg) translate(-2px,-2px)}
+.pick{animation:boing .7s cubic-bezier(.3,1.8,.5,1)}@keyframes boing{0%{transform:scale(1)}30%{transform:scale(1.06) rotate(-3deg)}60%{transform:scale(.98) rotate(2deg)}100%{transform:scale(1)}}
+.draw{align-self:center;font-family:var(--display);font-size:22px;background:var(--c2);color:var(--ink);border:3px solid var(--ink);border-radius:999px;padding:10px 28px;box-shadow:5px 5px 0 var(--ink);cursor:pointer}
+.draw:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.sign{text-align:right;font-family:var(--display);font-size:20px;margin:0}.foot{font-size:12px;color:var(--muted);text-align:center;margin:0}
+@media (prefers-reduced-motion:reduce){.lane{animation:none;position:static;display:block;padding:2px 10px}.danmaku{height:auto}.card{transition:none}.pick{animation:none}}
+</style></head><body><div class="wrap">
+<div class="danmaku" aria-hidden="true"><div class="lane"><span>这视频跟刘晓艳渲染大赛似的</span><span>用逆转时间的公式把假期拉长</span><span>这视频跟刘晓艳渲染大赛似的</span><span>用逆转时间的公式把假期拉长</span></div><div class="lane"><span>这海报蚁人去哪了，是不是又钻进谁身体了</span><span>这张照片拍得跟吸烟恶霸一样</span><span>这海报蚁人去哪了，是不是又钻进谁身体了</span><span>这张照片拍得跟吸烟恶霸一样</span></div><div class="lane"><span>这桶怕不是刀哥快乐瓶</span><span>这桶怕不是刀哥快乐瓶</span></div></div>
+<header class="head"><span class="issue">乐府 · 10 月 23 日 · 5 个</span><h1>今日<span class="hl">新</span><span class="tilt">梗</span></h1>
+<p class="sub">点卡片看梗Wiki 原文；不知道先看哪个，就去底下抽一个。</p></header>
+<div class="chat"><div class="ava" aria-hidden="true">乐</div><div class="msg"><span class="who">乐府 · 李延年</span><div class="bub">皇上，秋天快过去了，臣觉得今天这个“逆转时间的公式”最贴景，拿来感叹假期过得快正合适。</div></div></div>
+<ul class="cards"><li class="card c1" tabindex="0" role="button" aria-expanded="false">
+<span class="stamp">图像梗</span><h2 class="name"><mark>刘晓艳渲染大赛</mark></h2>
+<p class="mean">网友把刘晓艳老师画面疯狂特效加工再创作</p><p class="src">出自网友对考研英语老师刘晓艳名场面的二创</p>
+<div class="say"><p>这视频跟刘晓艳渲染大赛似的</p></div>
+<div class="more"><div><div class="origin"><b>出处</b><p>该梗源于考研英语老师刘晓艳的经典名场面。起因是网友抓拍到她拖着一支笔的画面，因动作神态酷似学生抽烟被抓到的样子，引发网友脑洞大开，发起“刘晓艳渲染大赛”。网友利用表情包、鬼畜特效、放大效果，结合她课堂劝学、偷看试卷等名场面进行二创，热度迅速扩散。</p><b>用法</b><p>“刘晓艳渲染大赛”指网友对刘晓艳老师经典画面进行二次创作（渲染、鬼畜、特效加工）的玩梗活动。使用时通常形容或指代这类二创视频/图片，例如：“又刷到一个刘晓艳渲染大赛的作品，笑死。”也可用于调侃某画面被网友疯狂二创加工的现象。核心表达是对刘晓艳名场面进行夸张化、特效化的娱乐性再创作。</p>
+<div class="tags"><span>图像梗</span><span>二次创作</span><span>鬼畜素材</span><span>恶搞</span></div>
+<a class="wiki" href="https://cnmeme.wiki/entry/%E5%88%98%E6%99%93%E8%89%B3%E6%B8%B2%E6%9F%93%E5%A4%A7%E8%B5%9B" target="_blank" rel="noopener">梗Wiki 原文</a></div></div></div>
+<span class="hint">梗Wiki 原文</span></li>
+<li class="card c4" tabindex="0" role="button" aria-expanded="false">
+<span class="stamp">电影梗</span><h2 class="name"><mark>蚁人去哪了</mark></h2>
+<p class="mean">调侃漫威画面没蚁人，说他又钻进谁身体了</p><p class="src">出自《复仇者联盟 3》剧情讨论及网友 AI 二创</p>
+<div class="say"><p>这海报蚁人去哪了，是不是又钻进谁身体了</p></div>
+<div class="more"><div><div class="origin"><b>出处</b><p>该梗源于《复仇者联盟3：无限战争》的剧情讨论。在电影中，蚁人因被困量子领域而未能参加对抗灭霸的战斗。有Reddit网友提出，编剧这样设计是因为蚁人其实可以杀死灭霸——具体想法是让蚁人缩小后钻进灭霸身体，再变大撑爆灭霸。漫威官方也曾在采访中对该想法进行调侃。后来该话题重新火热，是因为有网友用AI进行二创，制作了蚁人钻进灭霸身体的画面，令人印象深刻。</p><b>用法</b><p>该梗用于在漫威海报或视频中未出现蚁人时进行调侃，表达“蚁人又钻进某位角色身体里了”。常见表达为“蚁人去哪了？”或“蚁人是不是又钻进谁身体里了”，已成为漫威粉丝之间的专属暗号。例如看到某张漫威海报没有蚁人时，可评论“蚁人去哪了？是不是钻进灭霸身体里了”。</p>
+<div class="tags"><span>电影梗</span><span>漫威</span><span>调侃</span><span>粉丝文化</span></div>
+<a class="wiki" href="https://cnmeme.wiki/entry/%E8%9A%81%E4%BA%BA%E5%8E%BB%E5%93%AA%E4%BA%86" target="_blank" rel="noopener">梗Wiki 原文</a></div></div></div>
+<span class="hint">梗Wiki 原文</span></li>
+<li class="card c2" tabindex="0" role="button" aria-expanded="false">
+<span class="stamp">动物梗</span><h2 class="name"><mark>刀哥快乐瓶</mark></h2>
+<p class="mean">调侃看着没事却突然爆炸翻车的场面</p><p class="src">出自 2019 年俄罗斯网友上传的小狗追啤酒桶视频</p>
+<div class="say"><p>这桶怕不是刀哥快乐瓶</p></div>
+<div class="more"><div><div class="origin"><b>出处</b><p>“刀哥快乐瓶”源于2019年6月28日一名俄罗斯网友上传至PKB网站的一段视频。视频中，一只杰克罗素梗犬（名为Frodo）正在追逐一个塑料啤酒桶，下一秒啤酒桶突然爆炸，小狗被当场炸至僵直翻倒。由于结局完全出乎意料，俄罗斯网友为其制作了许多梗图。2021年该视频再次走红，经过网友各种配音和鬼畜二创后，在中国互联网上被熟知并得名“刀哥快乐瓶”。其中“刀哥”指视频中的小狗Frodo，“快乐瓶”则指那个爆炸的啤酒桶。 爆炸的桶正式名称为PET塑料啤酒桶，主要用于储存和运输啤酒。据原视频拍摄者解释，当时桶内残留的啤酒在高温下继续发酵，导致桶内压力不断升高，最终突然爆裂。小狗虽短暂昏厥并流了鼻血，但送医检查后并无严重受伤，后来甚至又有视频显示它继续追着（已提前打开的）啤酒桶玩耍。</p><b>用法</b><p>该梗用于形容或调侃“看似无害却突然发生意外爆炸/翻车”的场景，尤其常见于抽象、整活类内容中。文字表达时，可直接用“刀哥快乐瓶”指代那个会爆炸的塑料啤酒桶，或用“刀哥”指代视频中那只追逐啤酒桶却被炸翻的小狗。例如：“这桶怕不是刀哥快乐瓶，追着追着就炸了。”也可用于评论某人或某物“好了伤疤忘了疼”，像视频中的小狗一样继续去招惹危险源。</p>
+<div class="tags"><span>动物梗</span><span>视频梗</span><span>外网梗</span><span>反转</span></div>
+<a class="wiki" href="https://cnmeme.wiki/entry/%E5%88%80%E5%93%A5%E5%BF%AB%E4%B9%90%E7%93%B6" target="_blank" rel="noopener">梗Wiki 原文</a></div></div></div>
+<span class="hint">梗Wiki 原文</span></li>
+<li class="card c3" tabindex="0" role="button" aria-expanded="false">
+<span class="stamp">今日推荐</span><h2 class="name"><mark>逆转时间的公式</mark></h2>
+<p class="mean">用编的浪漫公式调侃假期太短、时间过得快</p><p class="src">出自 2022 年前后短视频平台流行的告白公式</p>
+<div class="say"><p>用逆转时间的公式把假期拉长</p></div>
+<div class="more"><div><div class="origin"><b>出处</b><p>该梗于2022年前后在短视频平台流行起来。其核心是一个被网友拼凑出来的“浪漫告白公式”，典型写法为： Y = X + 0.9 × NX × CNA × π × X （不同版本写法略有出入）。配合的文案通常是“如果π能算尽，则等式成立，逆转时空并非不可能”之类的话。最初含义偏向对爱情的追悔，后来逐渐演变为对逝去青春的怀念，甚至被部分影视作品用作出圈台词。</p><b>用法</b><p>如今该梗主要用于调侃假期短暂、青春不再。常见场景是寒暑假结束或冬天来临时，网友用“逆转时间的公式”来感叹时间过得太快，例如配文“一不小心又到了打雪仗的季节”“用逆转时间的公式把假期拉长”等。表达时通常直接写出公式，再配上一句感慨时间流逝的文案。</p>
+<div class="tags"><span>文字梗</span><span>短视频梗</span><span>伪科学</span><span>怀旧</span></div>
+<a class="wiki" href="https://cnmeme.wiki/entry/%E9%80%86%E8%BD%AC%E6%97%B6%E9%97%B4%E7%9A%84%E5%85%AC%E5%BC%8F" target="_blank" rel="noopener">梗Wiki 原文</a></div></div></div>
+<span class="hint">梗Wiki 原文</span></li>
+<li class="card c5" tabindex="0" role="button" aria-expanded="false">
+<span class="stamp">图像梗</span><h2 class="name"><mark>吸烟恶霸</mark></h2>
+<p class="mean">形容冷脸霸气、仪式感十足的拍照摆拍风格</p><p class="src">出自瑞典歌手 Yang Lin 的《Storm》MV</p>
+<div class="say"><p>这张照片拍得跟吸烟恶霸一样</p></div>
+<div class="more"><div><div class="origin"><b>出处</b><p>“吸烟恶霸”出自瑞典饶舌歌手Yang Lin发布的《Storm》MV。该MV没有打光、没有布景、没有俗套的桥段，以Yang Lin的恶霸气质、艺术屏幕、充满仪式感的编舞、混乱暴力与亚裔气息铺面而来。发布后，《Storm》被不少网友誉为年度最佳MV，其中“冷脸C位加仪式群舞加AI换脸”的模板更是被全球AI软件收入库中，并掀起一阵“吸烟恶霸”视频二创浪潮。该梗也常被写作“西烟恶霸”。</p><b>用法</b><p>“吸烟恶霸”指代《Storm》MV中Yang Lin所呈现出的冷脸、霸气、充满仪式感与压迫感的恶霸形象，常用于形容某人在视频或图片中摆出类似“冷脸C位、仪式群舞、AI换脸”风格的气场。具体表达时，可以直接用“吸烟恶霸”来称呼这类风格的人物或画面，例如：“这视频拍得跟吸烟恶霸一样”“AI换脸吸烟恶霸模板又来了”。该梗也常作为二创视频的标签或标题关键词，用来指代模仿《Storm》MV风格、使用AI换脸或仪式群舞的整活内容。</p>
+<div class="tags"><span>图像梗</span><span>视频梗</span><span>说唱</span><span>ai视频生成</span></div>
+<a class="wiki" href="https://cnmeme.wiki/entry/%E5%90%B8%E7%83%9F%E6%81%B6%E9%9C%B8" target="_blank" rel="noopener">梗Wiki 原文</a></div></div></div>
+<span class="hint">梗Wiki 原文</span></li></ul>
+<button class="draw" id="draw" type="button">抽一个梗</button>
+<p class="sign">臣李延年谨奏</p><p class="foot">释义与出处据梗Wiki 原文整理</p>
+</div><script>
+(function(){var cards=[].slice.call(document.querySelectorAll('.card'));
+function toggle(c,o){c.setAttribute('aria-expanded',o===undefined?(c.getAttribute('aria-expanded')!=='true'):o)}
+cards.forEach(function(c){c.addEventListener('click',function(e){if(e.target.closest('a'))return;toggle(c)});c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(c)}})});
+var last=-1,b=document.getElementById('draw');b.addEventListener('click',function(){var i;do{i=Math.floor(Math.random()*cards.length)}while(cards.length>1&&i===last);last=i;var c=cards[i];
+cards.forEach(function(x){x.classList.remove('pick')});c.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){void c.offsetWidth;c.classList.add('pick');toggle(c,true)},350);b.textContent='再抽一个'})})();
+</script></body></html>
