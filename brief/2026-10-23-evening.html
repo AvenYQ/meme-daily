@@ -21,7 +21,7 @@ html.evening .big::after{width:22px;height:22px;background:none;box-shadow:inset
 .name{font-family:var(--serif);font-weight:900;font-size:clamp(26px,7vw,36px);letter-spacing:.12em;line-height:1.1;margin:0}
 .date{font-size:13px;color:var(--sub);font-variant-numeric:tabular-nums}
 .meta{grid-column:1/-1;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--sub);letter-spacing:.06em;margin-top:10px}
-.open{margin:24px 0 4px;font-family:var(--serif);font-weight:600;font-size:clamp(18px,4.8vw,22px);line-height:1.9;letter-spacing:.06em;text-wrap:pretty;font-feature-settings:"palt" 0}
+.open{margin:24px 0 4px;font-family:var(--serif);font-weight:600;font-size:clamp(18px,4.8vw,22px);line-height:1.85;text-align:justify;text-wrap:wrap;line-break:strict}
 .open p{margin:0 0 8px}
 .wx{margin:18px 0 6px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
 .wx .lab{grid-column:1/-1;font-size:11px;letter-spacing:.3em;color:var(--acc2)}
@@ -49,7 +49,7 @@ nav sup{font-size:10px;margin-left:3px;color:var(--sub)}nav a.on sup{color:var(-
 .item:focus-visible{box-shadow:inset 3px 0 0 var(--acc)}
 .item.lead h3{font-size:22px}
 .item.lead{padding-top:16px}
-.n{color:var(--num);font-weight:600;font-variant-numeric:tabular-nums}
+.n{color:var(--num);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
 .note{margin:12px 0 0;padding:10px 14px;border-left:3px solid var(--acc);background:var(--paper);border-radius:0 10px 10px 0;font-size:14.5px}
 .board{margin:12px 0;padding:16px;border-radius:14px;background:var(--ink);color:var(--bg)}
 .board .teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;text-align:center;font-family:var(--serif);font-weight:900;font-size:15px}
