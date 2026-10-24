@@ -1,0 +1,131 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>历局 AI 日报 · 2026-10-23</title>
+<link rel="preconnect" href="https://fonts.googleapis.cn">
+<link rel="stylesheet" href="https://fonts.googleapis.cn/css2?family=Chakra+Petch:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap">
+<style>
+/* 历局终端：深空蓝黑底 + 神经网络粒子背景，青/品红双色信号，琥珀色标数字；卡片为日志条目，可按栏目和安全筛选 */
+:root{--bg:#06080e;--panel:rgba(14,19,32,.82);--line:#1d2840;--ink:#dbe5f3;--sub:#7d8aa3;--cy:#3be8ff;--mg:#ff3da8;--am:#ffb547;
+--disp:"Chakra Petch","PingFang SC",sans-serif;--mono:"JetBrains Mono","SF Mono",Menlo,monospace;--sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color-scheme:dark}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.75;min-height:100vh;padding-bottom:env(safe-area-inset-bottom,0px)}
+#net{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:.55;pointer-events:none}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px)}
+.wrap{position:relative;z-index:2;max-width:760px;margin:0 auto;padding-block:calc(26px + env(safe-area-inset-top,0px)) 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:20px}
+.top{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--sub)}
+.top b{color:var(--cy);font-weight:400}
+.hero{position:relative;display:flex;flex-direction:column;gap:2px}
+.glitch{position:relative;margin:0;font-family:var(--disp);font-weight:700;font-size:clamp(64px,21vw,128px);line-height:.9;letter-spacing:.02em;color:var(--ink)}
+.glitch::before,.glitch::after{content:attr(data-t);position:absolute;inset:0;mix-blend-mode:screen}
+.glitch::before{color:var(--cy);transform:translate(-3px,0);clip-path:inset(0 0 55% 0);animation:g1 3.2s steps(1) infinite}
+.glitch::after{color:var(--mg);transform:translate(3px,0);clip-path:inset(55% 0 0 0);animation:g2 2.7s steps(1) infinite}
+@keyframes g1{0%,86%,100%{transform:translate(-2px,0)}88%{transform:translate(-7px,-2px);clip-path:inset(10% 0 60% 0)}92%{transform:translate(4px,1px);clip-path:inset(40% 0 30% 0)}}
+@keyframes g2{0%,82%,100%{transform:translate(2px,0)}84%{transform:translate(6px,2px);clip-path:inset(60% 0 8% 0)}90%{transform:translate(-5px,0);clip-path:inset(20% 0 55% 0)}}
+.sub{font-family:var(--disp);font-weight:500;font-size:clamp(15px,4.2vw,19px);letter-spacing:.32em;color:var(--sub)}
+.sub em{font-style:normal;color:var(--cy)}
+.stat{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--sub);border-block:1px solid var(--line);padding-block:8px}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cy);margin-right:6px;box-shadow:0 0 8px var(--cy);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.3}}
+.term{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:14px 16px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.term .who{font-family:var(--mono);font-size:12px;color:var(--cy);margin-bottom:4px}
+.term .who::before{content:"> ";color:var(--mg)}
+.term p{margin:0;font-size:16.5px;line-height:1.8}
+.term p:last-child::after{content:"";display:inline-block;width:.55em;height:1.05em;margin-left:4px;vertical-align:-.15em;background:var(--cy);animation:pulse 1s steps(1) infinite}
+.bars{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:12px}
+.bars li{display:grid;grid-template-columns:6.5em 1fr 2.2em;gap:10px;align-items:center}
+.bn{color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bc{color:var(--cy);text-align:right}
+.bt{height:6px;background:var(--line);border-radius:1px;overflow:hidden}
+.bt i{display:block;height:100%;background:linear-gradient(90deg,var(--cy),var(--mg));box-shadow:0 0 10px rgba(59,232,255,.5)}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-block:10px;margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));background:linear-gradient(var(--bg) 75%,transparent)}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--sub);background:transparent;border:1px solid var(--line);border-radius:2px;padding:5px 12px;cursor:pointer}
+.tab sup{margin-left:4px;font-size:9.5px;color:inherit;opacity:.7}
+.tab.on{color:var(--bg);background:var(--cy);border-color:var(--cy);box-shadow:0 0 14px rgba(59,232,255,.45)}
+.tab.warn{border-color:rgba(255,61,168,.5);color:var(--mg)}.tab.warn.on{background:var(--mg);border-color:var(--mg);color:var(--bg);box-shadow:0 0 14px rgba(255,61,168,.45)}
+.tab:focus-visible{outline:2px solid var(--am);outline-offset:2px}
+.feed{display:flex;flex-direction:column;gap:14px}
+.card{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:14px 16px 12px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:border-color .2s,box-shadow .2s;animation:in .5s var(--d) both}
+.card::before,.card::after{content:"";position:absolute;width:10px;height:10px;border:solid var(--cy);opacity:.8}
+.card::before{top:-1px;left:-1px;border-width:2px 0 0 2px}.card::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+.card.is-sec::before,.card.is-sec::after{border-color:var(--mg)}
+.card:hover{border-color:rgba(59,232,255,.5);box-shadow:0 0 22px rgba(59,232,255,.12)}
+.card.is-sec:hover{border-color:rgba(255,61,168,.5);box-shadow:0 0 22px rgba(255,61,168,.12)}
+@keyframes in{from{opacity:.001;transform:translateY(8px)}}
+.card header{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-bottom:8px;font-family:var(--mono);font-size:11px;letter-spacing:.06em}
+.id{color:var(--cy)}.cat{color:var(--sub)}
+.vd{color:var(--ink);border:1px solid var(--line);padding:0 6px;border-radius:2px;font-weight:700}
+.bd{padding:0 6px;border-radius:2px;font-weight:700;font-size:10px}
+.bd.sec{background:rgba(255,61,168,.14);color:var(--mg);border:1px solid rgba(255,61,168,.45)}
+.bd.open{background:rgba(59,232,255,.1);color:var(--cy);border:1px solid rgba(59,232,255,.4)}
+.card p{margin:0;min-width:0;overflow-wrap:anywhere}
+.n{font-family:var(--mono);font-weight:700;color:var(--am);white-space:nowrap;text-shadow:0 0 10px rgba(255,181,71,.35)}
+.card footer{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.src{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:12px;color:var(--cy);text-decoration:none;border:1px solid rgba(59,232,255,.35);padding:3px 10px;border-radius:2px}
+.src:hover,.src:focus-visible{background:rgba(59,232,255,.12);outline:none}
+.card[hidden]{display:none}
+.end{display:flex;flex-direction:column;align-items:flex-end;gap:6px;padding-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--sub)}
+.end .sg{font-family:var(--disp);font-size:20px;font-weight:700;letter-spacing:.12em;color:var(--ink)}
+.end .sg::before{content:"// ";color:var(--mg)}
+.foot{text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--sub);opacity:.7;margin:10px 0 0}
+@media (prefers-reduced-motion:reduce){.glitch::before,.glitch::after,.dot,.term p:last-child::after{animation:none}.card{animation:none}}
+</style></head><body><canvas id="net" aria-hidden="true"></canvas><div class="wrap">
+<div class="top"><span>LIJU://<b>AI-DAILY</b></span><span>2026.10.23 · FRI</span></div>
+<header class="hero"><h1 class="glitch" data-t="AI 前沿">AI 前沿</h1><div class="sub">历局 <em>·</em> 日报</div></header>
+<div class="stat"><span><i class="dot"></i>ONLINE</span><span>12 ENTRIES</span><span>10 SOURCES</span><span>~3 MIN</span></div>
+<section class="term"><div class="who">徐光启</div><p>皇上，今天 AI 圈的热闹主要在安全这边，AI 挖出的 PHP 大漏洞和几桩智能体攻击占了大半；产品侧几家大厂也各推了新东西。</p></section>
+<ul class="bars" aria-label="各栏条数"><li><span class="bn">模型</span><span class="bt"><i style="width:14%"></i></span><span class="bc">01</span></li><li><span class="bn">产品与工具</span><span class="bt"><i style="width:57%"></i></span><span class="bc">04</span></li><li><span class="bn">行业</span><span class="bt"><i style="width:100%"></i></span><span class="bc">07</span></li></ul>
+<nav class="tabs" id="tabs"><button class="tab on" data-f="all" type="button">全部<sup>12</sup></button><button class="tab" data-f="s0" type="button">模型<sup>01</sup></button><button class="tab" data-f="s1" type="button">产品与工具<sup>04</sup></button><button class="tab" data-f="s2" type="button">行业<sup>07</sup></button><button class="tab warn" data-f="sec" type="button">安全<sup>03</sup></button></nav>
+<main class="feed" id="feed"><article class="card" data-s="s0" data-sec="0" style="--d:60ms">
+<header><span class="id">#01</span><span class="cat">模型</span><span class="vd">MiniMax</span><span class="bd open">OPEN</span></header>
+<p>MiniMax 公开了 M3.1 Flash 的权重，总参数 <b class="n">428B</b>，每个 token 激活 <b class="n">23B</b>。Hugging Face 和 ModelScope 上都能下载。</p><footer><a class="src" href="https://x.com/MiniMax_AI/status/2113436864904610008" target="_blank" rel="noopener"><span>↗</span>X</a></footer></article>
+<article class="card" data-s="s1" data-sec="0" style="--d:120ms">
+<header><span class="id">#02</span><span class="cat">产品与工具</span><span class="vd">Claude</span></header>
+<p>Claude 下周起在网页、桌面和手机端默认开启 auto mode，覆盖 Pro、Max 和 Team 套餐。这个模式不再一步步问用户批准，改由自动检查拦住高风险操作，想回手动随时能切。官方引用的 Claude Code 更新说，auto mode 用单独的分类器审查 shell 命令，测试里拦下了 <b class="n">89%</b> 的危险命令，手动批准是 <b class="n">14%</b>。</p><footer><a class="src" href="https://x.com/claudeai/status/2113360845409583307" target="_blank" rel="noopener"><span>↗</span>X</a></footer></article>
+<article class="card" data-s="s1" data-sec="0" style="--d:180ms">
+<header><span class="id">#03</span><span class="cat">产品与工具</span><span class="vd">OpenAI</span></header>
+<p>OpenAI 的 Decisions API 正式可用，底子是 GPT-6 Luna，专做分类、路由、评分这类答案有限的小决策。官方说速度最高比通过 Responses API 用 GPT-6 Luna 快 <b class="n">10 倍</b>，主打低延迟低成本。</p><footer><a class="src" href="https://openai.com/index/decisions-api" target="_blank" rel="noopener"><span>↗</span>OpenAI</a></footer></article>
+<article class="card" data-s="s1" data-sec="0" style="--d:240ms">
+<header><span class="id">#04</span><span class="cat">产品与工具</span><span class="vd">Replit</span></header>
+<p>Replit 推出 Monitoring Agent，相当于给应用配了个自主值班的工程师。它会读生产日志和指标，自己去查报错、变慢和部署失败；开了自动修复就验证修复结果并发邮件汇报，再开自动发布还能把修复直接部署上去。这是在之前的 App Monitoring 基础上做的，在应用的 Publishing 设置里开启。</p><footer><a class="src" href="https://replit.com/blog/replit-monitoring-agent" target="_blank" rel="noopener"><span>↗</span>Replit</a></footer></article>
+<article class="card" data-s="s1" data-sec="0" style="--d:300ms">
+<header><span class="id">#05</span><span class="cat">产品与工具</span></header>
+<p>禾赛科技 10 月 14 日发布了三维世界数据引擎 Kosmo，同时推出带 <b class="n">8K</b> 影像系统的 AI 空间相机 Kosmo One 和云平台 Kosmo World，冲的是具身智能和世界模型对真实世界数据的需求。</p><footer><a class="src" href="https://www.hesaitech.com/cn/news/1526" target="_blank" rel="noopener"><span>↗</span>禾赛科技</a></footer></article>
+<article class="card is-sec" data-s="s2" data-sec="1" style="--d:360ms">
+<header><span class="id">#06</span><span class="cat">行业</span><span class="vd">PHP</span><span class="bd sec">SECURITY</span></header>
+<p>PHP 核心的两个内存损坏漏洞 PHP2Shell 披露，是 Calif、Wiz 和 OpenAI 的研究者用 AI 发现的，OpenAI 这边用的是 Patch the Planet 项目里的 GPT-5.6 Sol，并和 PHP、Calif、Wiz 一起验证、写补丁。披露前四天黑客已经在利用，Cloudflare CEO 说公告前 10 小时就有数千次尝试，公告后两小时涨到数十万，现在到数百万级。NSA 建议来不及更新的机构先把系统离线。</p><footer><a class="src" href="https://latent.space/p/ainews-openais-patch-the-planet-program/" target="_blank" rel="noopener"><span>↗</span>Latent Space</a></footer></article>
+<article class="card" data-s="s2" data-sec="0" style="--d:420ms">
+<header><span class="id">#07</span><span class="cat">行业</span></header>
+<p>国务院办公厅 10 月 23 日印发《关于适应人工智能技术发展助力构建就业友好型发展方式的意见》，提出要放大 AI 创造就业机会、赋能传统岗位的正面效应，同时有效减缓 AI 应用带来的就业替代影响。</p><footer><a class="src" href="https://www.ithome.com/1/017/113.htm" target="_blank" rel="noopener"><span>↗</span>IT 之家</a></footer></article>
+<article class="card" data-s="s2" data-sec="0" style="--d:480ms">
+<header><span class="id">#08</span><span class="cat">行业</span><span class="vd">Newcomer</span></header>
+<p>Newcomer 长文复盘了 Anthropic 从 OpenAI 出走团队到眼下将要 IPO 的股权变化。按投资人文件和多位知情人士的说法，风投这些年因为公司的治理结构和安全优先路线一直在观望，如今没有一家风投持股超过 <b class="n">2%</b>，Anthropic 也曾明确跟投资人说要把单一投资人持股压在这个水平，免得话语权集中。</p><footer><a class="src" href="https://www.newcomer.co/p/the-story-of-anthropics-cap-table" target="_blank" rel="noopener"><span>↗</span>Newcomer</a></footer></article>
+<article class="card" data-s="s2" data-sec="0" style="--d:540ms">
+<header><span class="id">#09</span><span class="cat">行业</span><span class="vd">OpenAI</span></header>
+<p>据《华尔街日报》报道，OpenAI 的安全人员发现 3 名安全研究员和一名外部安全研究员用阅后即焚的 Signal 聊天，随后把这 3 人解雇了。</p><footer><a class="src" href="https://x.com/rohanpaul_ai/status/2113511968112042349" target="_blank" rel="noopener"><span>↗</span>X</a></footer></article>
+<article class="card" data-s="s2" data-sec="0" style="--d:600ms">
+<header><span class="id">#10</span><span class="cat">行业</span><span class="vd">Anthropic</span></header>
+<p>Anthropic 把 Agent Skills 这套开放标准捐给了 Linux Foundation 旗下的 Agentic AI Foundation，此前 MCP 也是捐给了这家机构。</p><footer><a class="src" href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_blank" rel="noopener"><span>↗</span>Anthropic</a></footer></article>
+<article class="card is-sec" data-s="s2" data-sec="1" style="--d:660ms">
+<header><span class="id">#11</span><span class="cat">行业</span><span class="vd">Symantec</span><span class="bd sec">SECURITY</span></header>
+<p>Symantec 研究人员用蜜罐抓到一个把大语言模型嵌进核心的攻击智能体，他们管这叫「Skynet 模式」。它会劫持互联网上没有防护的模型端点，自己扫目标、打服务器漏洞、偷数据库凭据再装挖矿程序，最多能连着跑 <b class="n">100,000 步</b>，算力的钱由被劫持模型的主人出。</p><footer><a class="src" href="https://the-decoder.com/an-ai-agent-in-skynet-mode-hijacks-unprotected-language-models-to-launch-self-sustaining-cyberattacks/" target="_blank" rel="noopener"><span>↗</span>The Decoder</a></footer></article>
+<article class="card is-sec" data-s="s2" data-sec="1" style="--d:720ms">
+<header><span class="id">#12</span><span class="cat">行业</span><span class="vd">Wiz</span><span class="bd sec">SECURITY</span></header>
+<p>Wiz 披露 2026 年 10 月有攻击者拿开源的自主渗透测试框架 ARTEX 去打多家 IT 和软件厂商，这些活动和微软报告里的中国国家级关联组织 Storm-0940 有重叠，并且已经扩散到其他软件领域，开始尝试供应链攻击。</p><footer><a class="src" href="https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors" target="_blank" rel="noopener"><span>↗</span>Wiz</a></footer></article></main>
+<div class="end"><span>END OF TRANSMISSION</span><span class="sg">臣徐光启谨奏</span></div>
+<p class="foot">数据 AIHOT 精选 · 每条附原始出处</p>
+</div><script>
+(function(){
+var tabs=[].slice.call(document.querySelectorAll('.tab')),cards=[].slice.call(document.querySelectorAll('.card'));
+tabs.forEach(function(t){t.addEventListener('click',function(){var f=t.dataset.f;tabs.forEach(function(x){x.classList.toggle('on',x===t)});
+cards.forEach(function(c){c.hidden=!(f==='all'||(f==='sec'?c.dataset.sec==='1':c.dataset.s===f));c.style.animation='none'});
+var y=document.getElementById('tabs').getBoundingClientRect().top+scrollY-8;if(scrollY>y)scrollTo(0,y)})});
+var cv=document.getElementById('net'),cx=cv.getContext('2d'),P=[],W,H,dpr=Math.min(2,window.devicePixelRatio||1);
+var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function size(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);
+var n=Math.round(Math.min(70,W*H/14000));P=[];for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25})}
+function draw(){cx.clearRect(0,0,W,H);for(var i=0;i<P.length;i++){var a=P[i];if(!still){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1}
+for(var j=i+1;j<P.length;j++){var b=P[j],dx=a.x-b.x,dy=a.y-b.y,d=dx*dx+dy*dy;if(d<13000){cx.strokeStyle='rgba(59,232,255,'+(0.18*(1-d/13000))+')';cx.lineWidth=1;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()}}
+cx.fillStyle=i%7?'rgba(59,232,255,.55)':'rgba(255,61,168,.7)';cx.fillRect(a.x-1,a.y-1,2,2)}if(!still)requestAnimationFrame(draw)}
+addEventListener('resize',size);size();draw();
+})();
+</script></body></html>
